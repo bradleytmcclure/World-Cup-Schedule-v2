@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
         
         :root {
             --color-green: #3CAC3B;
@@ -212,8 +212,8 @@
                 </div>
             </div>
 
-            <!-- Main Match Grid Container -->
-            <div id="match-feed-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-y-auto max-h-[calc(100vh-220px)] pr-2 custom-scrollbar">
+            <!-- Main Match Grid Container (Frictionless responsive heights prevent double scrollbars) -->
+            <div id="match-feed-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:overflow-y-auto lg:max-h-[calc(100vh-220px)] pr-2 custom-scrollbar overflow-visible h-auto">
                 <!-- Populated programmatically -->
             </div>
         </section>
@@ -838,7 +838,7 @@
                 const dateLabelShort = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', weekday: 'short' });
 
                 htmlString += `
-                    <div class="bg-gradient-to-b from-[#474A4A]/25 to-[#1b1c1c]/90 border ${isStarred ? 'border-[#E61D25]/50' : 'border-[#474A4A]/60'} rounded-2xl p-4 flex flex-col justify-between hover:border-[#3CAC3B]/50 transition-all duration-200 card-glow group relative backdrop-blur-sm">
+                    <div class="bg-[#474A4A]/25 border ${isStarred ? 'border-[#E61D25]/50 shadow-[0_0_15px_rgba(230,29,37,0.15)]' : 'border-[#474A4A]/60'} rounded-2xl p-4 flex flex-col justify-between hover:border-[#3CAC3B]/50 transition-all duration-200 card-glow group relative backdrop-blur-sm">
                         <!-- Top Header Area -->
                         <div>
                             <div class="flex items-center justify-between gap-2 mb-3">
