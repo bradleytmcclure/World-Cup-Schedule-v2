@@ -52,36 +52,36 @@
 <body class="text-[#D1D4D1] min-h-screen flex flex-col selection:bg-[#3CAC3B] selection:text-[#1b1c1c]">
 
     <!-- Header Section -->
-    <header class="border-b border-[#474A4A]/50 bg-[#474A4A]/20 backdrop-blur-md sticky top-0 z-50 px-4 lg:px-8 py-4">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
+    <header class="border-b border-[#474A4A]/50 bg-[#474A4A]/20 backdrop-blur-md sticky top-0 z-50 px-4 lg:px-8 py-3">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-                <div class="bg-gradient-to-tr from-[#3CAC3B] to-[#54c953] p-2.5 rounded-xl shadow-lg shadow-[#3CAC3B]/20">
-                    <i data-lucide="trophy" class="w-6 h-6 text-[#1b1c1c] stroke-[2.5]"></i>
+                <div class="bg-gradient-to-tr from-[#3CAC3B] to-[#54c953] p-2 rounded-xl shadow-lg shadow-[#3CAC3B]/20">
+                    <i data-lucide="trophy" class="w-5.5 h-5.5 text-[#1b1c1c] stroke-[2.5]"></i>
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
-                        <h1 class="text-xl font-extrabold tracking-tight text-white">
+                        <h1 class="text-lg font-extrabold tracking-tight text-white">
                             FIFA WORLD CUP 2026
                         </h1>
-                        <span class="bg-[#E61D25]/15 text-[#E61D25] text-[10px] font-bold px-2 py-0.5 rounded-full border border-[#E61D25]/30 flex items-center gap-1 animate-pulse">
+                        <span class="bg-[#E61D25]/15 text-[#E61D25] text-[9px] font-bold px-2 py-0.5 rounded-full border border-[#E61D25]/30 flex items-center gap-1 animate-pulse">
                             <span class="w-1.5 h-1.5 bg-[#E61D25] rounded-full"></span> LIVE CALENDAR
                         </span>
                     </div>
-                    <p class="text-xs font-semibold text-[#3CAC3B] tracking-wider uppercase">Interactive Match Center & Scheduler</p>
+                    <p class="text-[11px] font-semibold text-[#3CAC3B] tracking-wider uppercase">Interactive Match Center & Scheduler</p>
                 </div>
             </div>
 
             <div class="flex flex-wrap bg-[#474A4A]/40 p-1 rounded-xl border border-[#474A4A]/60 w-full lg:w-auto gap-1">
-                <button onclick="switchView('groups')" id="tab-groups" class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-200 bg-gradient-to-r from-[#3CAC3B] to-[#54c953] text-[#1b1c1c] shadow-md">
+                <button onclick="switchView('groups')" id="tab-groups" class="flex-1 lg:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 bg-gradient-to-r from-[#3CAC3B] to-[#54c953] text-[#1b1c1c] shadow-md">
                     <i data-lucide="layers" class="w-3.5 h-3.5"></i> Groups
                 </button>
-                <button onclick="switchView('teams')" id="tab-teams" class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-200 text-[#D1D4D1]/80 hover:text-white">
+                <button onclick="switchView('teams')" id="tab-teams" class="flex-1 lg:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 text-[#D1D4D1]/80 hover:text-white">
                     <i data-lucide="flag" class="w-3.5 h-3.5"></i> Teams
                 </button>
-                <button onclick="switchView('calendar')" id="tab-calendar" class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-200 text-[#D1D4D1]/80 hover:text-white">
+                <button onclick="switchView('calendar')" id="tab-calendar" class="flex-1 lg:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 text-[#D1D4D1]/80 hover:text-white">
                     <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Timeline
                 </button>
-                <button onclick="switchView('favorites')" id="tab-favorites" class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-200 text-[#D1D4D1]/80 hover:text-white">
+                <button onclick="switchView('favorites')" id="tab-favorites" class="flex-1 lg:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 text-[#D1D4D1]/80 hover:text-white">
                     <i data-lucide="star" class="w-3.5 h-3.5 text-[#E61D25]"></i> My Schedule (<span id="fav-count">0</span>)
                 </button>
             </div>
@@ -89,122 +89,118 @@
     </header>
 
     <!-- Main Container -->
-    <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:h-[calc(100vh-85px)] lg:overflow-hidden">
         
         <!-- Left Column: Filters, Timezone, and Sidebar Navigation Panels -->
-        <section class="lg:col-span-1 space-y-6 flex flex-col justify-between h-full">
-            <div class="space-y-6">
-                <!-- Opening Match Countdown Widget -->
-                <div class="bg-[#474A4A]/25 border border-[#3CAC3B]/30 rounded-2xl p-5 shadow-xl backdrop-blur-sm">
-                    <div class="flex items-center gap-2 text-[#3CAC3B] mb-2">
-                        <i data-lucide="timer" class="w-4 h-4 animate-spin-slow"></i>
-                        <h3 class="text-xs font-bold uppercase tracking-wider">Opening Match Countdown</h3>
+        <section class="lg:col-span-1 space-y-4 flex flex-col lg:h-full lg:overflow-y-auto lg:pr-2 custom-scrollbar">
+            
+            <!-- Opening Match Countdown Widget -->
+            <div class="bg-[#474A4A]/25 border border-[#3CAC3B]/30 rounded-2xl p-3.5 shadow-xl backdrop-blur-sm">
+                <div class="flex items-center gap-2 text-[#3CAC3B] mb-2">
+                    <i data-lucide="timer" class="w-3.5 h-3.5 animate-spin-slow"></i>
+                    <h3 class="text-[11px] font-bold uppercase tracking-wider">Opening Match Countdown</h3>
+                </div>
+                <div class="grid grid-cols-4 gap-1.5 text-center" id="countdown-timer">
+                    <div class="bg-[#474A4A]/40 p-1.5 rounded-lg border border-[#474A4A]/60">
+                        <span id="days" class="text-base font-black text-white">00</span>
+                        <p class="text-[8px] text-[#D1D4D1]/60 uppercase">Days</p>
                     </div>
-                    <div class="grid grid-cols-4 gap-2 text-center" id="countdown-timer">
-                        <div class="bg-[#474A4A]/40 p-2 rounded-xl border border-[#474A4A]/60">
-                            <span id="days" class="text-lg font-black text-white">00</span>
-                            <p class="text-[9px] text-[#D1D4D1]/60 uppercase">Days</p>
-                        </div>
-                        <div class="bg-[#474A4A]/40 p-2 rounded-xl border border-[#474A4A]/60">
-                            <span id="hours" class="text-lg font-black text-white">00</span>
-                            <p class="text-[9px] text-[#D1D4D1]/60 uppercase">Hours</p>
-                        </div>
-                        <div class="bg-[#474A4A]/40 p-2 rounded-xl border border-[#474A4A]/60">
-                            <span id="mins" class="text-lg font-black text-white">00</span>
-                            <p class="text-[9px] text-[#D1D4D1]/60 uppercase">Mins</p>
-                        </div>
-                        <div class="bg-[#474A4A]/40 p-2 rounded-xl border border-[#3CAC3B]/30">
-                            <span id="secs" class="text-lg font-black text-[#3CAC3B]">00</span>
-                            <p class="text-[9px] text-[#D1D4D1]/60 uppercase">Secs</p>
-                        </div>
+                    <div class="bg-[#474A4A]/40 p-1.5 rounded-lg border border-[#474A4A]/60">
+                        <span id="hours" class="text-base font-black text-white">00</span>
+                        <p class="text-[8px] text-[#D1D4D1]/60 uppercase">Hours</p>
                     </div>
-                    <div class="text-[11px] text-[#D1D4D1]/90 text-center mt-2.5">
-                        ⚽ <strong>Mexico vs. South Africa</strong> at Mexico City Stadium
+                    <div class="bg-[#474A4A]/40 p-1.5 rounded-lg border border-[#474A4A]/60">
+                        <span id="mins" class="text-base font-black text-white">00</span>
+                        <p class="text-[8px] text-[#D1D4D1]/60 uppercase">Mins</p>
+                    </div>
+                    <div class="bg-[#474A4A]/40 p-1.5 rounded-lg border border-[#3CAC3B]/30">
+                        <span id="secs" class="text-base font-black text-[#3CAC3B]">00</span>
+                        <p class="text-[8px] text-[#D1D4D1]/60 uppercase">Secs</p>
                     </div>
                 </div>
-
-                <!-- Active Filters Indicator & Search -->
-                <div class="bg-[#474A4A]/15 border border-[#474A4A]/50 rounded-2xl p-5 shadow-xl backdrop-blur-sm">
-                    <div class="flex items-center justify-between mb-2">
-                        <h2 class="text-sm font-bold uppercase tracking-wider text-[#D1D4D1]/75 flex items-center gap-2">
-                            <i data-lucide="sliders-horizontal" class="w-4 h-4 text-[#3CAC3B]"></i> Composite Filters
-                        </h2>
-                        <button onclick="resetFilters()" id="clear-btn" class="text-xs font-semibold text-[#D1D4D1]/70 hover:text-[#E61D25] transition flex items-center gap-1 opacity-0 pointer-events-none">
-                            Reset <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
-                        </button>
-                    </div>
-                    <div id="filter-status" class="text-base font-bold text-white mb-2">
-                        Showing All Matches
-                    </div>
-                    <!-- Container for active filter chips -->
-                    <div id="filter-chips-container" class="mb-4"></div>
-                    
-                    <p id="filter-desc" class="text-xs text-[#D1D4D1]/60 mt-1">
-                        Select multiple groups, teams, or timeline nodes in the sidebar explorer below to mix and match active layers.
-                    </p>
-                    
-                    <div class="mt-4 relative">
-                        <i data-lucide="search" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#D1D4D1]/50"></i>
-                        <input type="text" id="global-search" oninput="handleSearch(this.value)" placeholder="Search teams, stadiums, or cities..." class="w-full bg-[#1b1c1c]/90 border border-[#474A4A]/60 rounded-xl pl-10 pr-4 py-2.5 text-sm text-[#D1D4D1] placeholder:text-[#D1D4D1]/40 focus:outline-none focus:border-[#3CAC3B]/50 focus:ring-1 focus:ring-[#3CAC3B]/30 transition">
-                    </div>
-                </div>
-
-                <!-- Timezone Selector Widget -->
-                <div class="bg-[#474A4A]/15 border border-[#474A4A]/50 rounded-2xl p-5 shadow-xl backdrop-blur-sm">
-                    <div class="flex items-center gap-2 text-[#3CAC3B] mb-3">
-                        <i data-lucide="globe" class="w-4 h-4 text-[#3CAC3B]"></i>
-                        <h3 class="text-xs font-bold uppercase tracking-wider">Kickoff Timezone Conversion</h3>
-                    </div>
-                    <div class="relative">
-                        <select id="timezone-select" onchange="handleTimezoneChange(this.value)" class="w-full bg-[#1b1c1c] border border-[#474A4A]/60 rounded-xl px-4 py-2.5 text-sm font-semibold text-[#D1D4D1] focus:outline-none focus:border-[#3CAC3B]/50 focus:ring-1 focus:ring-[#3CAC3B]/30 transition cursor-pointer">
-                            <option value="venue" selected>🏟️ Venue Local Time</option>
-                            <option value="America/New_York">🗽 Eastern Time (EDT)</option>
-                            <option value="America/Chicago">🤠 Central Time (CDT)</option>
-                            <option value="America/Denver">🏔️ Mountain Time (MDT)</option>
-                            <option value="America/Los_Angeles">🌲 Pacific Time (PDT)</option>
-                            <option value="UTC">🌐 Coordinated Universal Time (UTC)</option>
-                            <option id="user-tz-option" value="user">📱 My Local Time</option>
-                        </select>
-                    </div>
-                    <p class="text-[11px] text-[#D1D4D1]/50 mt-2">
-                        Dates and kickoff times convert dynamically based on stadium geographic offsets.
-                    </p>
-                </div>
-
-                <!-- Dynamic Explorer Sidebar Feed -->
-                <div id="view-panel-container" class="bg-[#474A4A]/10 border border-[#474A4A]/40 rounded-2xl p-5 min-h-[300px] backdrop-blur-sm">
-                    <!-- Filled via JS -->
+                <div class="text-[10px] text-[#D1D4D1]/90 text-center mt-2">
+                    ⚽ <strong>Mexico vs. South Africa</strong> at Mexico City Stadium
                 </div>
             </div>
 
-            <!-- Official Host Nations Poster Card -->
-            <div class="bg-[#474A4A]/15 border border-[#474A4A]/50 rounded-2xl p-4 shadow-xl backdrop-blur-sm overflow-hidden flex flex-col items-center mt-6">
-                <div class="flex items-center gap-2 text-[#3CAC3B] mb-3 self-start w-full">
-                    <i data-lucide="image" class="w-4 h-4"></i>
-                    <h3 class="text-xs font-bold uppercase tracking-wider">Official Tournament Poster</h3>
+            <!-- Active Filters Indicator & Search -->
+            <div class="bg-[#474A4A]/15 border border-[#474A4A]/50 rounded-2xl p-3.5 shadow-xl backdrop-blur-sm">
+                <div class="flex items-center justify-between mb-1.5">
+                    <h2 class="text-[11px] font-bold uppercase tracking-wider text-[#D1D4D1]/75 flex items-center gap-1.5">
+                        <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5 text-[#3CAC3B]"></i> Composite Filters
+                    </h2>
+                    <button onclick="resetFilters()" id="clear-btn" class="text-[10px] font-semibold text-[#D1D4D1]/70 hover:text-[#E61D25] transition flex items-center gap-1 opacity-0 pointer-events-none">
+                        Reset <i data-lucide="rotate-ccw" class="w-2.5 h-2.5"></i>
+                    </button>
                 </div>
-                <div class="relative w-full rounded-xl overflow-hidden border border-[#474A4A]/60 aspect-[14.725/22.375] bg-[#1b1c1c] shadow-inner group">
+                <div id="filter-status" class="text-sm font-bold text-white mb-1.5">
+                    Showing All Matches
+                </div>
+                <!-- Container for active filter chips -->
+                <div id="filter-chips-container" class="mb-2"></div>
+                
+                <p id="filter-desc" class="text-[10px] text-[#D1D4D1]/60 mt-1">
+                    Select multiple categories in the sidebar explorer below.
+                </p>
+                
+                <div class="mt-3 relative">
+                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[#D1D4D1]/50"></i>
+                    <input type="text" id="global-search" oninput="handleSearch(this.value)" placeholder="Search teams, stadiums, or cities..." class="w-full bg-[#1b1c1c]/90 border border-[#474A4A]/60 rounded-xl pl-9 pr-3 py-1.5 text-xs text-[#D1D4D1] placeholder:text-[#D1D4D1]/40 focus:outline-none focus:border-[#3CAC3B]/50 focus:ring-1 focus:ring-[#3CAC3B]/30 transition">
+                </div>
+            </div>
+
+            <!-- Timezone Selector Widget -->
+            <div class="bg-[#474A4A]/15 border border-[#474A4A]/50 rounded-2xl p-3.5 shadow-xl backdrop-blur-sm">
+                <div class="flex items-center gap-1.5 text-[#3CAC3B] mb-2">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 text-[#3CAC3B]"></i>
+                    <h3 class="text-[11px] font-bold uppercase tracking-wider">Timezone</h3>
+                </div>
+                <div class="relative">
+                    <select id="timezone-select" onchange="handleTimezoneChange(this.value)" class="w-full bg-[#1b1c1c] border border-[#474A4A]/60 rounded-xl px-3 py-1.5 text-xs font-semibold text-[#D1D4D1] focus:outline-none focus:border-[#3CAC3B]/50 focus:ring-1 focus:ring-[#3CAC3B]/30 transition cursor-pointer">
+                        <option value="venue" selected>🏟️ Venue Local Time</option>
+                        <option value="America/New_York">🗽 Eastern Time (EDT)</option>
+                        <option value="America/Chicago">🤠 Central Time (CDT)</option>
+                        <option value="America/Denver">🏔️ Mountain Time (MDT)</option>
+                        <option value="America/Los_Angeles">🌲 Pacific Time (PDT)</option>
+                        <option value="UTC">🌐 Coordinated Universal Time (UTC)</option>
+                        <option id="user-tz-option" value="user">📱 My Local Time</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dynamic Explorer Sidebar Feed -->
+            <div id="view-panel-container" class="bg-[#474A4A]/10 border border-[#474A4A]/40 rounded-2xl p-3.5 min-h-[220px] backdrop-blur-sm">
+                <!-- Filled via JS -->
+            </div>
+
+            <!-- Official Host Nations Poster Card -->
+            <div class="bg-[#474A4A]/15 border border-[#474A4A]/50 rounded-2xl p-3 shadow-xl backdrop-blur-sm overflow-hidden flex flex-col items-center">
+                <div class="flex items-center gap-2 text-[#3CAC3B] mb-2 self-start w-full">
+                    <i data-lucide="image" class="w-3.5 h-3.5"></i>
+                    <h3 class="text-[11px] font-bold uppercase tracking-wider">Official Tournament Poster</h3>
+                </div>
+                <div class="relative w-full rounded-xl overflow-hidden border border-[#474A4A]/60 h-32 bg-[#1b1c1c] shadow-inner group">
                     <img src="FIFA-World-Cup-2026-Logo-Wall-Poster-14-725-x-22-375_1ef86397-20f8-4be4-aa55-9c7c98fd960f.102cfb827f1d32bd5036f07ed0420e29_2.avif" 
                          alt="FIFA World Cup 2026 Poster" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                          onerror="this.onerror=null; this.src='https://placehold.co/725x1118/1b1c1c/3CAC3B?text=FIFA+World+Cup+2026'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                        <p class="text-[10px] text-white font-bold uppercase tracking-wide">CAN • MEX • USA 2026</p>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
+                        <p class="text-[9px] text-white font-bold uppercase tracking-wide">CAN • MEX • USA 2026</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Right Column: Matches Feed Grid -->
-        <section class="lg:col-span-2 flex flex-col space-y-4">
+        <section class="lg:col-span-2 flex flex-col space-y-4 lg:h-full lg:overflow-hidden">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2.5">
-                    <h2 class="text-lg font-bold text-white">Scheduled Match Matrix</h2>
-                    <span id="match-count" class="bg-[#474A4A]/30 text-[#3CAC3B] text-xs px-3 py-1 font-bold rounded-full border border-[#3CAC3B]/20 shadow-inner">0 matches</span>
+                    <h2 class="text-base font-bold text-white">Scheduled Match Matrix</h2>
+                    <span id="match-count" class="bg-[#474A4A]/30 text-[#3CAC3B] text-xs px-2.5 py-0.5 font-bold rounded-full border border-[#3CAC3B]/20 shadow-inner">0 matches</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <span class="text-xs text-[#D1D4D1]/60 font-medium">Sort Grid:</span>
-                    <select id="match-sort" onchange="handleSortChange(this.value)" class="bg-[#1b1c1c] border border-[#474A4A]/60 rounded-lg text-xs font-semibold text-[#D1D4D1] px-3 py-1.5 focus:outline-none focus:border-[#3CAC3B]">
+                    <select id="match-sort" onchange="handleSortChange(this.value)" class="bg-[#1b1c1c] border border-[#474A4A]/60 rounded-lg text-xs font-semibold text-[#D1D4D1] px-2.5 py-1 focus:outline-none focus:border-[#3CAC3B]">
                         <option value="chronological">Chronological Order</option>
                         <option value="stadium">By Venue Location</option>
                         <option value="group">By Group / Stage</option>
@@ -213,14 +209,14 @@
             </div>
 
             <!-- Main Match Grid Container (Frictionless responsive heights prevent double scrollbars) -->
-            <div id="match-feed-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:overflow-y-auto lg:max-h-[calc(100vh-220px)] pr-2 custom-scrollbar overflow-visible h-auto">
+            <div id="match-feed-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:overflow-y-auto lg:flex-1 pr-2 custom-scrollbar overflow-visible h-auto">
                 <!-- Populated programmatically -->
             </div>
         </section>
     </main>
 
     <!-- Footer Status -->
-    <footer class="border-t border-[#474A4A]/40 bg-[#1b1c1c]/90 py-4 text-center text-xs text-[#D1D4D1]/40 font-medium mt-auto">
+    <footer class="border-t border-[#474A4A]/40 bg-[#1b1c1c]/90 py-3 text-center text-[10px] text-[#D1D4D1]/40 font-medium mt-auto">
         ⚽ FIFA World Cup 2026 Interactive Match Hub | Fully Responsive Dynamic Blueprint Matrix
     </footer>
 
@@ -416,9 +412,9 @@
             ['groups', 'teams', 'calendar', 'favorites'].forEach(tab => {
                 const button = document.getElementById(`tab-${tab}`);
                 if(tab === viewName) {
-                    button.className = "flex-1 lg:flex-none flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-200 bg-gradient-to-r from-[#3CAC3B] to-[#54c953] text-[#1b1c1c] shadow-md";
+                    button.className = "flex-1 lg:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 bg-gradient-to-r from-[#3CAC3B] to-[#54c953] text-[#1b1c1c] shadow-md";
                 } else {
-                    button.className = "flex-1 lg:flex-none flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold transition-all duration-200 text-[#D1D4D1]/80 hover:text-white";
+                    button.className = "flex-1 lg:flex-none flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 text-[#D1D4D1]/80 hover:text-white";
                 }
             });
 
@@ -435,11 +431,11 @@
                         <i data-lucide="layers" class="w-4 h-4 text-[#3CAC3B]"></i>
                         <h3 class="text-xs font-bold uppercase tracking-wider text-[#D1D4D1]/80">Filter by Group Phase</h3>
                     </div>
-                    <div class="grid grid-cols-2 gap-2 max-h-[420px] overflow-y-auto pr-1 custom-scrollbar">
+                    <div class="grid grid-cols-2 gap-2 max-h-[260px] overflow-y-auto pr-1 custom-scrollbar">
                         ${groupsList.map(group => {
                             const isAct = selectedFilters.groups.includes(group);
                             return `
-                                <button onclick="toggleFilter('group', '${group}')" class="text-left p-3 rounded-xl border text-xs font-semibold transition-all relative ${isAct ? 'bg-[#3CAC3B]/10 border-[#3CAC3B] text-[#3CAC3B] font-bold shadow-[0_0_12px_rgba(60,172,59,0.15)]' : 'bg-[#1b1c1c]/80 border-[#474A4A]/50 text-[#D1D4D1] hover:border-[#3CAC3B]/50 hover:bg-[#474A4A]/20'}">
+                                <button onclick="toggleFilter('group', '${group}')" class="text-left p-2.5 rounded-xl border text-xs font-semibold transition-all relative ${isAct ? 'bg-[#3CAC3B]/10 border-[#3CAC3B] text-[#3CAC3B] font-bold shadow-[0_0_12px_rgba(60,172,59,0.15)]' : 'bg-[#1b1c1c]/80 border-[#474A4A]/50 text-[#D1D4D1] hover:border-[#3CAC3B]/50 hover:bg-[#474A4A]/20'}">
                                     <div class="flex items-center justify-between gap-1">
                                         <span class="truncate">${group}</span>
                                         ${isAct ? '<i data-lucide="check" class="w-3.5 h-3.5 text-[#3CAC3B] flex-shrink-0"></i>' : ''}
@@ -457,15 +453,15 @@
                         <i data-lucide="flag" class="w-4 h-4 text-[#3CAC3B]"></i>
                         <h3 class="text-xs font-bold uppercase tracking-wider text-[#D1D4D1]/80">Filter by Nation</h3>
                     </div>
-                    <div class="grid grid-cols-2 gap-2 max-h-[420px] overflow-y-auto pr-1 custom-scrollbar">
+                    <div class="grid grid-cols-2 gap-2 max-h-[260px] overflow-y-auto pr-1 custom-scrollbar">
                         ${teamsList.map(team => {
                             const isAct = selectedFilters.teams.includes(team);
                             const flag = getTeamFlag(team);
                             return `
-                                <button onclick="toggleFilter('team', '${team}')" class="text-left p-2.5 rounded-xl border text-xs font-semibold transition-all flex items-center justify-between gap-1 truncate ${isAct ? 'bg-[#3CAC3B]/10 border-[#3CAC3B] text-[#3CAC3B] font-bold shadow-[0_0_12px_rgba(60,172,59,0.15)]' : 'bg-[#1b1c1c]/80 border-[#474A4A]/50 text-[#D1D4D1] hover:border-[#3CAC3B]/50 hover:bg-[#474A4A]/20'}">
+                                <button onclick="toggleFilter('team', '${team}')" class="text-left p-2 rounded-xl border text-xs font-semibold transition-all flex items-center justify-between gap-1 truncate ${isAct ? 'bg-[#3CAC3B]/10 border-[#3CAC3B] text-[#3CAC3B] font-bold shadow-[0_0_12px_rgba(60,172,59,0.15)]' : 'bg-[#1b1c1c]/80 border-[#474A4A]/50 text-[#D1D4D1] hover:border-[#3CAC3B]/50 hover:bg-[#474A4A]/20'}">
                                     <div class="flex items-center gap-2 truncate">
-                                        <span class="text-base leading-none">${flag}</span>
-                                        <span class="truncate">${team}</span>
+                                        <span class="text-sm leading-none">${flag}</span>
+                                        <span class="truncate text-[11px]">${team}</span>
                                     </div>
                                     ${isAct ? '<i data-lucide="check" class="w-3.5 h-3.5 text-[#3CAC3B] flex-shrink-0"></i>' : ''}
                                 </button>
@@ -480,7 +476,7 @@
                         <i data-lucide="calendar" class="w-4 h-4 text-[#3CAC3B]"></i>
                         <h3 class="text-xs font-bold uppercase tracking-wider text-[#D1D4D1]/80">Tournament Timeline Nodes</h3>
                     </div>
-                    <div class="space-y-1.5 max-h-[420px] overflow-y-auto pr-1 custom-scrollbar">
+                    <div class="space-y-1.5 max-h-[260px] overflow-y-auto pr-1 custom-scrollbar">
                         ${timelineDays.map(dateStr => {
                             const isAct = selectedFilters.dates.includes(dateStr);
                             const d = new Date(dateStr + 'T00:00:00');
@@ -488,7 +484,7 @@
                             const count = matchesDataset.filter(m => m.Date === dateStr).length;
 
                             return `
-                                <button onclick="toggleFilter('date', '${dateStr}')" class="w-full text-left px-3.5 py-2.5 rounded-xl border text-xs font-bold transition-all flex items-center justify-between ${isAct ? 'bg-[#3CAC3B]/10 border-[#3CAC3B] text-[#3CAC3B] font-bold shadow-[0_0_12px_rgba(60,172,59,0.15)]' : 'bg-[#1b1c1c]/80 border-[#474A4A]/50 text-[#D1D4D1] hover:border-[#3CAC3B]/50 hover:bg-[#474A4A]/20'}">
+                                <button onclick="toggleFilter('date', '${dateStr}')" class="w-full text-left px-3.5 py-2 rounded-xl border text-xs font-bold transition-all flex items-center justify-between ${isAct ? 'bg-[#3CAC3B]/10 border-[#3CAC3B] text-[#3CAC3B] font-bold shadow-[0_0_12px_rgba(60,172,59,0.15)]' : 'bg-[#1b1c1c]/80 border-[#474A4A]/50 text-[#D1D4D1] hover:border-[#3CAC3B]/50 hover:bg-[#474A4A]/20'}">
                                     <div class="flex items-center gap-2">
                                         ${isAct ? '<i data-lucide="check-square" class="w-3.5 h-3.5 text-[#3CAC3B]"></i>' : '<i data-lucide="square" class="w-3.5 h-3.5 text-[#D1D4D1]/30"></i>'}
                                         <span>${formattedDate}</span>
@@ -561,7 +557,7 @@
             if (totalActive === 0) {
                 statusText.innerText = 'Showing All Matches';
                 clearBtn.classList.add('opacity-0', 'pointer-events-none');
-                container.innerHTML = '<p class="text-xs text-[#D1D4D1]/40 italic">No filters selected. Click explorer items in the sidebar to accumulate filters.</p>';
+                container.innerHTML = '<p class="text-[10px] text-[#D1D4D1]/40 italic">No filters selected. Click explorer items in the sidebar.</p>';
                 return;
             }
             
@@ -571,10 +567,10 @@
             // Render active group chips
             selectedFilters.groups.forEach(g => {
                 html += `
-                    <span class="inline-flex items-center gap-1 bg-[#2A398D]/20 text-white text-[10px] font-extrabold pl-2.5 pr-1.5 py-1 rounded-full border border-[#2A398D]/40 shadow-inner">
+                    <span class="inline-flex items-center gap-1 bg-[#2A398D]/20 text-white text-[9px] font-extrabold pl-2 pr-1 py-0.5 rounded-full border border-[#2A398D]/40 shadow-inner">
                         📁 ${g}
                         <button onclick="toggleFilter('group', '${g}')" class="hover:text-[#E61D25] ml-1 focus:outline-none">
-                            <i data-lucide="x" class="w-3 h-3"></i>
+                            <i data-lucide="x" class="w-2.5 h-2.5"></i>
                         </button>
                     </span>
                 `;
@@ -584,10 +580,10 @@
             selectedFilters.teams.forEach(t => {
                 const flag = getTeamFlag(t);
                 html += `
-                    <span class="inline-flex items-center gap-1 bg-[#3CAC3B]/10 text-white text-[10px] font-extrabold pl-2.5 pr-1.5 py-1 rounded-full border border-[#3CAC3B]/30 shadow-inner">
+                    <span class="inline-flex items-center gap-1 bg-[#3CAC3B]/10 text-white text-[9px] font-extrabold pl-2 pr-1 py-0.5 rounded-full border border-[#3CAC3B]/30 shadow-inner">
                         ${flag} ${t}
                         <button onclick="toggleFilter('team', '${t}')" class="hover:text-[#E61D25] ml-1 focus:outline-none">
-                            <i data-lucide="x" class="w-3 h-3"></i>
+                            <i data-lucide="x" class="w-2.5 h-2.5"></i>
                         </button>
                     </span>
                 `;
@@ -598,16 +594,16 @@
                 const d = new Date(dt + 'T00:00:00');
                 const formattedDate = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
                 html += `
-                    <span class="inline-flex items-center gap-1 bg-[#474A4A]/30 text-white text-[10px] font-extrabold pl-2.5 pr-1.5 py-1 rounded-full border border-[#474A4A]/50 shadow-inner">
+                    <span class="inline-flex items-center gap-1 bg-[#474A4A]/30 text-white text-[9px] font-extrabold pl-2 pr-1 py-0.5 rounded-full border border-[#474A4A]/50 shadow-inner">
                         📅 ${formattedDate}
                         <button onclick="toggleFilter('date', '${dt}')" class="hover:text-[#E61D25] ml-1 focus:outline-none">
-                            <i data-lucide="x" class="w-3 h-3"></i>
+                            <i data-lucide="x" class="w-2.5 h-2.5"></i>
                         </button>
                     </span>
                 `;
             });
             
-            container.innerHTML = `<div class="flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto custom-scrollbar p-0.5">${html}</div>`;
+            container.innerHTML = `<div class="flex flex-wrap gap-1 max-h-[80px] overflow-y-auto custom-scrollbar p-0.5">${html}</div>`;
             lucide.createIcons();
         }
 
@@ -786,7 +782,7 @@
                         separatorMarkup = `
                             <div class="col-span-full flex items-center gap-4 mt-8 mb-4 first:mt-2">
                                 <div class="h-[3px] bg-gradient-to-r from-transparent via-[#2A398D]/85 to-transparent flex-1 rounded-full"></div>
-                                <div class="bg-[#1b1c1c] border border-[#2A398D]/60 px-5 py-2.5 rounded-2xl text-xs font-black text-white tracking-widest uppercase flex items-center gap-2.5 shadow-xl backdrop-blur-sm">
+                                <div class="bg-[#1b1c1c] border border-[#2A398D]/60 px-5 py-2 rounded-2xl text-xs font-black text-white tracking-widest uppercase flex items-center gap-2 shadow-xl backdrop-blur-sm">
                                     <i data-lucide="calendar" class="w-4 h-4 text-[#3CAC3B]"></i>
                                     <span>${cleanDate}</span>
                                 </div>
@@ -800,7 +796,7 @@
                         separatorMarkup = `
                             <div class="col-span-full flex items-center gap-4 mt-8 mb-4 first:mt-2">
                                 <div class="h-[3px] bg-gradient-to-r from-transparent via-[#3CAC3B]/75 to-transparent flex-1 rounded-full"></div>
-                                <div class="bg-[#1b1c1c] border border-[#3CAC3B]/60 px-5 py-2.5 rounded-2xl text-xs font-black text-[#3CAC3B] tracking-widest uppercase flex items-center gap-2.5 shadow-xl backdrop-blur-sm">
+                                <div class="bg-[#1b1c1c] border border-[#3CAC3B]/60 px-5 py-2 rounded-2xl text-xs font-black text-[#3CAC3B] tracking-widest uppercase flex items-center gap-2 shadow-xl backdrop-blur-sm">
                                     <i data-lucide="map-pin" class="w-4 h-4"></i>
                                     <span>${match.Location}</span>
                                 </div>
@@ -814,7 +810,7 @@
                         separatorMarkup = `
                             <div class="col-span-full flex items-center gap-4 mt-8 mb-4 first:mt-2">
                                 <div class="h-[3px] bg-gradient-to-r from-transparent via-[#E61D25]/75 to-transparent flex-1 rounded-full"></div>
-                                <div class="bg-[#1b1c1c] border border-[#E61D25]/60 px-5 py-2.5 rounded-2xl text-xs font-black text-[#E61D25] tracking-widest uppercase flex items-center gap-2.5 shadow-xl backdrop-blur-sm">
+                                <div class="bg-[#1b1c1c] border border-[#E61D25]/60 px-5 py-2 rounded-2xl text-xs font-black text-[#E61D25] tracking-widest uppercase flex items-center gap-2 shadow-xl backdrop-blur-sm">
                                     <i data-lucide="layers" class="w-4 h-4"></i>
                                     <span>${match.Group}</span>
                                 </div>
@@ -856,34 +852,34 @@
                             </div>
 
                             <!-- Competing Teams -->
-                            <div class="space-y-3 my-3">
+                            <div class="space-y-2.5 my-2.5">
                                 <div class="flex items-center justify-between bg-[#1b1c1c]/60 p-2 rounded-xl border border-[#474A4A]/40 transition ${isHomeFilterAct ? 'ring-2 ring-[#3CAC3B]/50 bg-[#3CAC3B]/5' : ''}">
-                                    <div class="flex items-center gap-2.5">
-                                        <span class="text-lg leading-none">${getTeamFlag(match['Home Team'])}</span>
-                                        <span class="text-sm font-semibold tracking-wide ${isHomeFilterAct ? 'text-[#3CAC3B] font-black' : 'text-white'} group-hover:text-white transition">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-base leading-none">${getTeamFlag(match['Home Team'])}</span>
+                                        <span class="text-xs font-semibold tracking-wide ${isHomeFilterAct ? 'text-[#3CAC3B] font-black' : 'text-white'} group-hover:text-white transition">
                                             ${match['Home Team']}
                                         </span>
                                     </div>
-                                    <span class="text-[9px] font-bold text-[#D1D4D1]/40 tracking-widest bg-[#1b1c1c] px-1.5 py-0.5 rounded-md border border-[#474A4A]/40">HOME</span>
+                                    <span class="text-[8px] font-bold text-[#D1D4D1]/40 tracking-widest bg-[#1b1c1c] px-1 py-0.5 rounded border border-[#474A4A]/40">HOME</span>
                                 </div>
                                 <div class="flex items-center justify-between bg-[#1b1c1c]/60 p-2 rounded-xl border border-[#474A4A]/40 transition ${isAwayFilterAct ? 'ring-2 ring-[#3CAC3B]/50 bg-[#3CAC3B]/5' : ''}">
-                                    <div class="flex items-center gap-2.5">
-                                        <span class="text-lg leading-none">${getTeamFlag(match['Away Team'])}</span>
-                                        <span class="text-sm font-semibold tracking-wide ${isAwayFilterAct ? 'text-[#3CAC3B] font-black' : 'text-white'} group-hover:text-white transition">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-base leading-none">${getTeamFlag(match['Away Team'])}</span>
+                                        <span class="text-xs font-semibold tracking-wide ${isAwayFilterAct ? 'text-[#3CAC3B] font-black' : 'text-white'} group-hover:text-white transition">
                                             ${match['Away Team']}
                                         </span>
                                     </div>
-                                    <span class="text-[9px] font-bold text-[#D1D4D1]/40 tracking-widest bg-[#1b1c1c] px-1.5 py-0.5 rounded-md border border-[#474A4A]/40">AWAY</span>
+                                    <span class="text-[8px] font-bold text-[#D1D4D1]/40 tracking-widest bg-[#1b1c1c] px-1 py-0.5 rounded border border-[#474A4A]/40">AWAY</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Date/Time Footer Area -->
-                        <div class="mt-4 pt-3 border-t border-[#474A4A]/40 flex items-center justify-between text-xs text-[#D1D4D1]/70">
+                        <div class="mt-3.5 pt-2.5 border-t border-[#474A4A]/40 flex items-center justify-between text-xs text-[#D1D4D1]/70">
                             <span class="flex items-center gap-1.5 font-semibold text-[#D1D4D1]/80">
                                 <i data-lucide="calendar" class="w-4 h-4 text-[#D1D4D1]/45"></i> ${dateLabelShort}
                             </span>
-                            <span class="bg-[#3CAC3B]/10 text-[#3CAC3B] border border-[#3CAC3B]/30 font-bold px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-inner">
+                            <span class="bg-[#3CAC3B]/10 text-[#3CAC3B] border border-[#3CAC3B]/30 font-bold px-2 py-0.5 rounded-lg flex items-center gap-1 shadow-inner text-[11px]">
                                 <i data-lucide="clock" class="w-3.5 h-3.5"></i> ${displayTime}
                             </span>
                         </div>
